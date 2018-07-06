@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h2 id="minir-api">MinIR API</h2>
+<p>MinIRで利用できるWebAPIの説明です。</p>
+<h2 id="%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99">事前準備</h2>
+<p>MinIRへのデータ書き込みにはPublicKeyが必要です。
+以下の手順で取得できます。</p>
+<ol>
+<li>MinIRにログインします。</li>
+<li><code>GENERATE API KEY</code> ボタンを押してKeyを作成します。<br>
+<img src="./images/generate.PNG" alt="&quot;&quot;"></li>
+</ol>
+<p>※注意</p>
+<ul>
+<li><code>GENERATE API KEY</code>を押すたびにキーが再作成されます。表示されているキーのみ有効です。</li>
+</ul>
+<hr>
+<h2 id="get-songscores">GET SongScores</h2>
+<p>曲のスコアリストを取得します。</p>
+<h3 id="url">URL</h3>
+<p><code>https://minir.azurewebsites.net/api/getSongScores</code></p>
+<h3 id="http-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89">HTTP メソッド</h3>
+<p>GET</p>
+<h3 id="%E3%82%AF%E3%82%A8%E3%83%AA%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF">クエリパラメータ</h3>
+<p>なし</p>
+<h3 id="%E3%83%98%E3%83%83%E3%83%80%E3%83%BC">ヘッダー</h3>
+<ul>
+<li>songhash (必須)： 譜面のsha256</li>
+<li>lnmode （オプション）：lnmode(0 or Nothing:LN, 1:CN, 2:HCN)</li>
+</ul>
+<p>※<code>LNMODE</code>拡張定義があるBMSはlnmode=0でしか取得できません。</p>
+<h3 id="body">BODY</h3>
+<p>なし</p>
+<h3 id="%E3%83%AC%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B9%E4%BE%8B">レスポンス例</h3>
+<pre class="hljs"><code><div>[
+    {
+        &quot;lpg&quot;: 917,
+        &quot;combo&quot;: 884,
+        &quot;datetime&quot;: &quot;2018-05-31T10:57:04.734Z&quot;,
+        &quot;lgr&quot;: 442,
+        &quot;songhash&quot;: &quot;57a52cb3fbeac72b876d80524f38f50850006c5878a628f0147a5c4c0ede6d11.0&quot;,
+        &quot;clear&quot;: 6,
+        &quot;userid&quot;: &quot;0c0f76af-e47d-43aa-90cd-d4a3ac5932f3&quot;,
+        &quot;notes&quot;: 2115,
+        &quot;score&quot;: 3575,
+        &quot;epg&quot;: 583,
+        &quot;username&quot;: &quot;いづな&quot;,
+        &quot;egr&quot;: 133
+    },
+    {
+        &quot;lpg&quot;: 588,
+        &quot;combo&quot;: 796,
+        &quot;datetime&quot;: &quot;2018-05-26T06:30:17.834Z&quot;,
+        &quot;lgr&quot;: 317,
+        &quot;songhash&quot;: &quot;57a52cb3fbeac72b876d80524f38f50850006c5878a628f0147a5c4c0ede6d11.0&quot;,
+        &quot;clear&quot;: 7,
+        &quot;userid&quot;: &quot;00997ef2-4173-4da5-8e7d-28798398e52f&quot;,
+        &quot;notes&quot;: 2115,
+        &quot;score&quot;: 3365,
+        &quot;epg&quot;: 744,
+        &quot;username&quot;: &quot;Otaku&quot;,
+        &quot;egr&quot;: 384
+    },
+    {
+        &quot;lpg&quot;: 276,
+        &quot;combo&quot;: 265,
+        &quot;datetime&quot;: &quot;2018-06-28T06:22:52.171Z&quot;,
+        &quot;lgr&quot;: 285,
+        &quot;songhash&quot;: &quot;57a52cb3fbeac72b876d80524f38f50850006c5878a628f0147a5c4c0ede6d11.0&quot;,
+        &quot;clear&quot;: 1,
+        &quot;userid&quot;: &quot;fcf03d99-63c8-42a2-bacd-e71ce6445b1b&quot;,
+        &quot;notes&quot;: 2115,
+        &quot;score&quot;: 2267,
+        &quot;epg&quot;: 446,
+        &quot;username&quot;: &quot;E-patternβ&quot;,
+        &quot;egr&quot;: 538
+    }
+]
+</div></code></pre>
+<hr>
+<h2 id="put-songscore">PUT SongScore</h2>
+<p>曲のスコアをMnIRに登録します。</p>
+<h3 id="url">URL</h3>
+<p><code>https://minir.azurewebsites.net/api/putSongScore</code></p>
+<h3 id="http-%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89">HTTP メソッド</h3>
+<p>PUT</p>
+<h3 id="%E3%82%AF%E3%82%A8%E3%83%AA%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF">クエリパラメータ</h3>
+<p>なし</p>
+<h3 id="%E3%83%98%E3%83%83%E3%83%80%E3%83%BC">ヘッダー</h3>
+<ul>
+<li>publickey (必須)： <code>GENERATE API KEY</code>で取得したKey</li>
+<li>dryrun （オプション）：<code>true</code>の場合、MinIRに書き込みを行わず、書き込み結果がどのようになるかがレスポンスとして返却されます。</li>
+</ul>
+<p>※<code>LNMODE</code>拡張定義があるBMSはlnmode=0でしか取得できません。</p>
+<h3 id="body">BODY</h3>
+<p>曲スコアデータJSON。各項目は必須です。</p>
+<pre class="hljs"><code><div>{
+    &quot;songhash&quot;: &quot;SONGHASH&quot;,
+    &quot;lnmode&quot;: 0,
+    &quot;score&quot;: 1234,
+    &quot;epg&quot;: 600,
+    &quot;lpg&quot;: 0,
+    &quot;egr&quot;: 33,
+    &quot;lgr&quot;: 1,
+    &quot;combo&quot;: 550,
+    &quot;clear&quot;: 3,
+    &quot;notes&quot;: 1555
+}
+</div></code></pre>
+<ul>
+<li>songhash : 譜面のsha256</li>
+<li>lnmode: LNプレイモード。(0:LN, 1:CN, 2:HCN)
+<code>LNMODE</code>拡張定義があるBMSはlnmode=0を指定してください。</li>
+<li>score:EX SCORE</li>
+<li>epg: early perfect great</li>
+<li>lpg: late perfect great</li>
+<li>egr: early great</li>
+<li>lgr: late great</li>
+<li>combo:max combo</li>
+<li>clear
+<ul>
+<li>0 : NoPlay</li>
+<li>1 : Failed</li>
+<li>2 : AssistEasy</li>
+<li>3 : LightAssistEasy</li>
+<li>4 : Easy</li>
+<li>5 : Normal</li>
+<li>6 : Hard</li>
+<li>7 : ExHard</li>
+<li>8 : FullCombo</li>
+<li>9 : Perfect</li>
+<li>10 : Max</li>
+</ul>
+</li>
+<li>notes : 譜面ノート数（※RANDOM譜面の場合、ノート数が変動する）</li>
+</ul>
+<h3 id="%E3%83%AC%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B9%E4%BE%8B">レスポンス例</h3>
+<h4 id="dryrun-false-or-nothing">dryrun == false or nothing</h4>
+<p>&quot;Put Song score successed.&quot;</p>
+<h4 id="dryrun-true">dryrun = true</h4>
+<pre class="hljs"><code><div>{
+    &quot;songhash&quot;: &quot;TEST.0&quot;,
+    &quot;score&quot;: 1234,
+    &quot;epg&quot;: 600,
+    &quot;lpg&quot;: 0,
+    &quot;egr&quot;: 33,
+    &quot;lgr&quot;: 1,
+    &quot;combo&quot;: 550,
+    &quot;clear&quot;: 3,
+    &quot;notes&quot;: 1555,
+    &quot;userid&quot;: &quot;a30f300b-1984-4797-80d3-66a06af7fcc8&quot;,
+    &quot;username&quot;: &quot;海岸砂丘&quot;
+}
+</div></code></pre>
+<hr>
+
+</body>
+</html>
